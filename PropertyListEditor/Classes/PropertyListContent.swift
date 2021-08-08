@@ -22,17 +22,23 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Foundation
+import Cocoa
 
-public extension NSError
+public class PropertyListContent: NSObject
 {
-    convenience init( title: String, message: String, code: Int = 0 )
+    @objc public private( set ) dynamic var node   = PropertyListNode()
+    @objc public private( set ) dynamic var format = PropertyListSerialization.PropertyListFormat.xml
+    
+    public func read( data: Data ) throws
     {
-        let info: [ String : Any ] = [
-            NSLocalizedDescriptionKey             : title,
-            NSLocalizedRecoverySuggestionErrorKey : message
-        ]
-        
-        self.init( domain: "com.xs-labs.PropertyListEditor", code: 0, userInfo: info )
+        var format  = PropertyListSerialization.PropertyListFormat.xml
+        let plist   = try PropertyListSerialization.propertyList( from: data, options: .mutableContainers, format: &format )
+        self.node   = PropertyListNode( key: "Property List", propertyList: plist )
+        self.format = format
+    }
+    
+    public func data() throws -> Data
+    {
+        try PropertyListSerialization.data( fromPropertyList: self.node.propertyList, format: self.format, options: 0 )
     }
 }

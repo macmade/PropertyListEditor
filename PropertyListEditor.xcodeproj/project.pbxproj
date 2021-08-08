@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05A808EA26C00F0800837A91 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A808E926C00F0800837A91 /* NSError.swift */; };
+		05CFC4F326C01DAF00D76BA7 /* PropertyListDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC4F226C01DAF00D76BA7 /* PropertyListDocument.swift */; };
+		05CFC51726C020DE00D76BA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05CFC51526C020DE00D76BA7 /* Main.storyboard */; };
+		05CFC51926C021DC00D76BA7 /* PropertyListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */; };
+		05CFC51B26C0222100D76BA7 /* PropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */; };
+		05CFC51D26C0275F00D76BA7 /* PropertyListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */; };
 		05FC7E7326BAA5BF0033FC23 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7E6F26BAA5BF0033FC23 /* ApplicationDelegate.swift */; };
-		05FC7E7426BAA5BF0033FC23 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FC7E7126BAA5BF0033FC23 /* MainMenu.xib */; };
-		05FC7E7C26BAAA1A0033FC23 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FC7E7A26BAAA1A0033FC23 /* AboutWindowController.xib */; };
-		05FC7E7E26BAAA1F0033FC23 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7E7D26BAAA1F0033FC23 /* AboutWindowController.swift */; };
-		05FC7EAB26BB60940033FC23 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7EAA26BB60940033FC23 /* MainWindowController.swift */; };
-		05FC7EAE26BB620A0033FC23 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05FC7EAC26BB620A0033FC23 /* MainWindowController.xib */; };
 		05FC7EB126BB62B70033FC23 /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7EB026BB62B70033FC23 /* PropertyListNode.swift */; };
 		05FC7EBD26BB6F560033FC23 /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FC7EBA26BB6F4C0033FC23 /* GitHubUpdates.framework */; };
 		05FC7EBE26BB6F560033FC23 /* GitHubUpdates.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05FC7EBA26BB6F4C0033FC23 /* GitHubUpdates.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -98,15 +97,14 @@
 		054C896D26B979510006A91C /* ccache.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ccache.sh; sourceTree = "<group>"; };
 		054C896E26B979510006A91C /* Debug - zld.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Debug - zld.xcconfig"; sourceTree = "<group>"; };
 		05A808E826C00A7A00837A91 /* PropertyListEditor.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PropertyListEditor.entitlements; sourceTree = "<group>"; };
-		05A808E926C00F0800837A91 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		05CFC4F226C01DAF00D76BA7 /* PropertyListDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListDocument.swift; sourceTree = "<group>"; };
+		05CFC51626C020DE00D76BA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListWindowController.swift; sourceTree = "<group>"; };
+		05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewController.swift; sourceTree = "<group>"; };
+		05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListContent.swift; sourceTree = "<group>"; };
 		05FC7E6026BAA5850033FC23 /* PropertyList Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PropertyList Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05FC7E6926BAA5860033FC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05FC7E6F26BAA5BF0033FC23 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
-		05FC7E7226BAA5BF0033FC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		05FC7E7B26BAAA1A0033FC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutWindowController.xib; sourceTree = "<group>"; };
-		05FC7E7D26BAAA1F0033FC23 /* AboutWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
-		05FC7EAA26BB60940033FC23 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		05FC7EAD26BB620A0033FC23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainWindowController.xib; sourceTree = "<group>"; };
 		05FC7EB026BB62B70033FC23 /* PropertyListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListNode.swift; sourceTree = "<group>"; };
 		05FC7EB426BB6F4C0033FC23 /* GitHubUpdates.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GitHubUpdates.xcodeproj; path = Submodules/GitHubUpdates/GitHubUpdates.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,11 +279,12 @@
 		05FC7E6E26BAA5BF0033FC23 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				05FC7E7D26BAAA1F0033FC23 /* AboutWindowController.swift */,
 				05FC7E6F26BAA5BF0033FC23 /* ApplicationDelegate.swift */,
-				05FC7EAA26BB60940033FC23 /* MainWindowController.swift */,
-				05A808E926C00F0800837A91 /* NSError.swift */,
 				05FC7EB026BB62B70033FC23 /* PropertyListNode.swift */,
+				05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */,
+				05CFC4F226C01DAF00D76BA7 /* PropertyListDocument.swift */,
+				05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */,
+				05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -293,9 +292,7 @@
 		05FC7E7026BAA5BF0033FC23 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				05FC7E7A26BAAA1A0033FC23 /* AboutWindowController.xib */,
-				05FC7E7126BAA5BF0033FC23 /* MainMenu.xib */,
-				05FC7EAC26BB620A0033FC23 /* MainWindowController.xib */,
+				05CFC51526C020DE00D76BA7 /* Main.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -391,9 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05FC7E7C26BAAA1A0033FC23 /* AboutWindowController.xib in Resources */,
-				05FC7EAE26BB620A0033FC23 /* MainWindowController.xib in Resources */,
-				05FC7E7426BAA5BF0033FC23 /* MainMenu.xib in Resources */,
+				05CFC51726C020DE00D76BA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,39 +419,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05FC7E7E26BAAA1F0033FC23 /* AboutWindowController.swift in Sources */,
+				05CFC51D26C0275F00D76BA7 /* PropertyListContent.swift in Sources */,
+				05CFC4F326C01DAF00D76BA7 /* PropertyListDocument.swift in Sources */,
 				05FC7E7326BAA5BF0033FC23 /* ApplicationDelegate.swift in Sources */,
-				05FC7EAB26BB60940033FC23 /* MainWindowController.swift in Sources */,
+				05CFC51926C021DC00D76BA7 /* PropertyListWindowController.swift in Sources */,
 				05FC7EB126BB62B70033FC23 /* PropertyListNode.swift in Sources */,
-				05A808EA26C00F0800837A91 /* NSError.swift in Sources */,
+				05CFC51B26C0222100D76BA7 /* PropertyListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		05FC7E7126BAA5BF0033FC23 /* MainMenu.xib */ = {
+		05CFC51526C020DE00D76BA7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				05FC7E7226BAA5BF0033FC23 /* Base */,
+				05CFC51626C020DE00D76BA7 /* Base */,
 			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		05FC7E7A26BAAA1A0033FC23 /* AboutWindowController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				05FC7E7B26BAAA1A0033FC23 /* Base */,
-			);
-			name = AboutWindowController.xib;
-			sourceTree = "<group>";
-		};
-		05FC7EAC26BB620A0033FC23 /* MainWindowController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				05FC7EAD26BB620A0033FC23 /* Base */,
-			);
-			name = MainWindowController.xib;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

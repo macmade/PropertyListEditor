@@ -44,6 +44,11 @@ public class PropertyListNode: NSObject
         return formatter
     }
     
+    public convenience override init()
+    {
+        self.init( key: "Property List", propertyList: NSMutableDictionary() )
+    }
+    
     public init( key: String, propertyList: Any )
     {
         let info          = PropertyListNode.info( for: propertyList )
