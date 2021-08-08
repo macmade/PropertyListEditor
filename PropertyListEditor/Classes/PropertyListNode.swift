@@ -29,7 +29,7 @@ public class PropertyListNode: NSObject
     @objc public private( set ) dynamic var key:          String
     @objc public private( set ) dynamic var value:        String
     @objc public private( set ) dynamic var type:         String
-    @objc public private( set ) dynamic var propertyList: Any?
+    @objc public private( set ) dynamic var propertyList: Any
     @objc public private( set ) dynamic var textColor:    NSColor
     @objc public private( set ) dynamic var children    = [ PropertyListNode ]()
     
@@ -44,7 +44,7 @@ public class PropertyListNode: NSObject
         return formatter
     }
     
-    public init( key: String, propertyList: Any? )
+    public init( key: String, propertyList: Any )
     {
         let info          = PropertyListNode.info( for: propertyList )
         self.key          = key
@@ -224,7 +224,7 @@ public class PropertyListNode: NSObject
     }
     
     @discardableResult
-    private func addChild( key: String, propertyList: Any? ) -> PropertyListNode
+    private func addChild( key: String, propertyList: Any ) -> PropertyListNode
     {
         let child = PropertyListNode( key: key, propertyList: propertyList )
         

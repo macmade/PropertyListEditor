@@ -29,14 +29,20 @@ public class MainWindowController: NSWindowController, NSOutlineViewDelegate, NS
     @IBOutlet private var treeController: NSTreeController!
     @IBOutlet private var outlineView:    NSOutlineView!
     
-    @objc public private( set ) dynamic var url:    URL?
-    @objc public private( set ) dynamic var plist:  Any
+    @objc public private( set ) dynamic var plist:  PropertyListNode
     @objc public private( set ) dynamic var format: PropertyListSerialization.PropertyListFormat
+    @objc public private( set ) dynamic var url:    URL?
+    {
+        didSet
+        {
+            self.window?.title = self.url?.lastPathComponent ?? "New Document"
+        }
+    }
     
     public init()
     {
         self.format = PropertyListSerialization.PropertyListFormat.xml
-        self.plist  = NSMutableDictionary()
+        self.plist  = PropertyListNode( key: "Property List", propertyList: NSMutableDictionary() )
         
         super.init( window: nil )
     }
@@ -47,7 +53,7 @@ public class MainWindowController: NSWindowController, NSOutlineViewDelegate, NS
         let data       = try Data( contentsOf: url )
         let plist      = try PropertyListSerialization.propertyList( from: data, options: .mutableContainersAndLeaves, format: &format )
         self.url       = url
-        self.plist     = plist
+        self.plist     = PropertyListNode( key: "Property List", propertyList: plist )
         self.format    = format
         
         super.init( window: nil )
@@ -78,13 +84,84 @@ public class MainWindowController: NSWindowController, NSOutlineViewDelegate, NS
         
         self.treeController.sortDescriptors = [ NSSortDescriptor( key: "key", ascending: true, selector: #selector( NSString.localizedCaseInsensitiveCompare( _: ) ) ) ]
         
-        self.treeController.addObject( PropertyListNode( key: "Property List", propertyList: self.plist ) )
+        self.treeController.addObject( self.plist )
         
         DispatchQueue.main.async
         {
             if let item = self.outlineView.item( atRow: 0 )
             {
                 self.outlineView.expandItem( item, expandChildren: false )
+            }
+        }
+    }
+    
+    private func showError( _ error: Error )
+    {
+        let alert = NSAlert( error: error )
+        
+        if let window = self.window
+        {
+            alert.beginSheetModal( for: window, completionHandler: nil )
+        }
+        else
+        {
+            alert.runModal()
+        }
+    }
+    
+    @IBAction private func saveDocument( _ sender: Any? )
+    {
+        guard let url = self.url else
+        {
+            self.saveDocumentAs( sender )
+            
+            return
+        }
+        
+        do
+        {
+            let data = try PropertyListSerialization.data( fromPropertyList: self.plist.propertyList, format: self.format, options: 0 )
+            
+            try data.write( to: url )
+        }
+        catch let error
+        {
+            self.showError( error )
+        }
+    }
+    
+    @IBAction private func saveDocumentAs( _ sender: Any? )
+    {
+        guard let window = self.window else
+        {
+            NSSound.beep()
+            
+            return
+        }
+        
+        let panel                     = NSSavePanel()
+        panel.canCreateDirectories    = true
+        panel.allowsOtherFileTypes    = false
+        panel.allowedFileTypes        = [ "plist" ]
+        
+        panel.beginSheetModal( for: window )
+        {
+            guard $0 == .OK, let url = panel.url else
+            {
+                return
+            }
+            
+            do
+            {
+                let data = try PropertyListSerialization.data( fromPropertyList: self.plist.propertyList, format: self.format, options: 0 )
+                
+                try data.write( to: url )
+                
+                self.url = url
+            }
+            catch let error
+            {
+                self.showError( error )
             }
         }
     }
