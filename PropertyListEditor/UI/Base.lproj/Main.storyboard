@@ -765,8 +765,8 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="VsH-He-Cos" name="toolTip" keyPath="objectValue.key" id="pzm-k0-CvN"/>
                                                                         <binding destination="VsH-He-Cos" name="value" keyPath="objectValue.key" id="1Wc-KR-Yqa"/>
+                                                                        <binding destination="VsH-He-Cos" name="toolTip" keyPath="objectValue.key" id="pzm-k0-CvN"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -806,8 +806,16 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Bsu-Lb-VVC" name="toolTip" keyPath="objectValue.type" id="uNb-Wo-VzN"/>
-                                                                        <binding destination="Bsu-Lb-VVC" name="value" keyPath="objectValue.type" id="2vo-db-n25"/>
+                                                                        <binding destination="Bsu-Lb-VVC" name="toolTip" keyPath="objectValue" id="J34-Vo-rr8">
+                                                                            <dictionary key="options">
+                                                                                <string key="NSValueTransformerName">PropertyListType</string>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                        <binding destination="Bsu-Lb-VVC" name="value" keyPath="objectValue" id="Dbi-gW-4z7">
+                                                                            <dictionary key="options">
+                                                                                <string key="NSValueTransformerName">PropertyListType</string>
+                                                                            </dictionary>
+                                                                        </binding>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -847,9 +855,21 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="mJF-cf-ix1" name="textColor" keyPath="objectValue.textColor" id="Jg8-ng-aHo"/>
-                                                                        <binding destination="mJF-cf-ix1" name="toolTip" keyPath="objectValue.value" id="FET-Ui-TB9"/>
-                                                                        <binding destination="mJF-cf-ix1" name="value" keyPath="objectValue.value" id="Xrf-y3-X3s"/>
+                                                                        <binding destination="mJF-cf-ix1" name="textColor" keyPath="objectValue" id="bWu-aH-GiB">
+                                                                            <dictionary key="options">
+                                                                                <string key="NSValueTransformerName">PropertyListTextColor</string>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                        <binding destination="mJF-cf-ix1" name="toolTip" keyPath="objectValue" id="xOV-3R-wRM">
+                                                                            <dictionary key="options">
+                                                                                <string key="NSValueTransformerName">PropertyListValue</string>
+                                                                            </dictionary>
+                                                                        </binding>
+                                                                        <binding destination="mJF-cf-ix1" name="value" keyPath="objectValue" id="6DG-FG-Bz3">
+                                                                            <dictionary key="options">
+                                                                                <string key="NSValueTransformerName">PropertyListValue</string>
+                                                                            </dictionary>
+                                                                        </binding>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>

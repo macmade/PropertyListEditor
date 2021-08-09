@@ -24,21 +24,26 @@
 
 import Cocoa
 
-public class PropertyListContent: NSObject
+@objc( PropertyListTextColor )
+public class PropertyListTextColor: ValueTransformer
 {
-    @objc public private( set ) dynamic var node   = PropertyListNode()
-    @objc public private( set ) dynamic var format = PropertyListSerialization.PropertyListFormat.xml
-    
-    public func read( data: Data ) throws
+    public override class func transformedValueClass() -> AnyClass
     {
-        var format  = PropertyListSerialization.PropertyListFormat.xml
-        let plist   = try PropertyListSerialization.propertyList( from: data, options: .mutableContainers, format: &format )
-        self.node   = PropertyListNode( key: "Property List", propertyList: plist )
-        self.format = format
+        NSColor.self
     }
     
-    public func data() throws -> Data
+    public override class func allowsReverseTransformation() -> Bool
     {
-        try PropertyListSerialization.data( fromPropertyList: self.node.value, format: self.format, options: 0 )
+        false
+    }
+    
+    public override func transformedValue( _ value: Any? ) -> Any?
+    {
+        guard let node = value as? PropertyListNode else
+        {
+            return NSColor.labelColor
+        }
+        
+        return node.children.count > 0 ? NSColor.secondaryLabelColor : NSColor.labelColor
     }
 }
