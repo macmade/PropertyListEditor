@@ -24,8 +24,8 @@
 
 import Foundation
 
-@objc( PropertyListValue )
-public class PropertyListValue: ValueTransformer
+@objc( PropertyListValueTransformer )
+public class PropertyListValueTransformer: ValueTransformer
 {
     private static var dateFormatter: DateFormatter
     {
@@ -73,7 +73,7 @@ public class PropertyListValue: ValueTransformer
         }
         else if let date = node.value as? Date
         {
-            return PropertyListValue.dateFormatter.string( from: date )
+            return PropertyListValueTransformer.dateFormatter.string( from: date )
         }
         else if let url = node.value as? URL
         {

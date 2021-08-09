@@ -12,9 +12,9 @@
 		05CFC51926C021DC00D76BA7 /* PropertyListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */; };
 		05CFC51B26C0222100D76BA7 /* PropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */; };
 		05CFC51D26C0275F00D76BA7 /* PropertyListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */; };
-		05CFC52326C17F8400D76BA7 /* PropertyListValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52226C17F8400D76BA7 /* PropertyListValue.swift */; };
-		05CFC52726C17FBD00D76BA7 /* PropertyListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52626C17FBD00D76BA7 /* PropertyListType.swift */; };
-		05CFC52926C1807500D76BA7 /* PropertyListTextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52826C1807500D76BA7 /* PropertyListTextColor.swift */; };
+		05CFC52326C17F8400D76BA7 /* PropertyListValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52226C17F8400D76BA7 /* PropertyListValueTransformer.swift */; };
+		05CFC52726C17FBD00D76BA7 /* PropertyListTypeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52626C17FBD00D76BA7 /* PropertyListTypeTransformer.swift */; };
+		05CFC52926C1807500D76BA7 /* PropertyListTextColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CFC52826C1807500D76BA7 /* PropertyListTextColorTransformer.swift */; };
 		05FC7E7326BAA5BF0033FC23 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7E6F26BAA5BF0033FC23 /* ApplicationDelegate.swift */; };
 		05FC7EB126BB62B70033FC23 /* PropertyListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FC7EB026BB62B70033FC23 /* PropertyListNode.swift */; };
 		05FC7EBD26BB6F560033FC23 /* GitHubUpdates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05FC7EBA26BB6F4C0033FC23 /* GitHubUpdates.framework */; };
@@ -105,9 +105,9 @@
 		05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListWindowController.swift; sourceTree = "<group>"; };
 		05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewController.swift; sourceTree = "<group>"; };
 		05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListContent.swift; sourceTree = "<group>"; };
-		05CFC52226C17F8400D76BA7 /* PropertyListValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListValue.swift; sourceTree = "<group>"; };
-		05CFC52626C17FBD00D76BA7 /* PropertyListType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListType.swift; sourceTree = "<group>"; };
-		05CFC52826C1807500D76BA7 /* PropertyListTextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTextColor.swift; sourceTree = "<group>"; };
+		05CFC52226C17F8400D76BA7 /* PropertyListValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListValueTransformer.swift; sourceTree = "<group>"; };
+		05CFC52626C17FBD00D76BA7 /* PropertyListTypeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTypeTransformer.swift; sourceTree = "<group>"; };
+		05CFC52826C1807500D76BA7 /* PropertyListTextColorTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListTextColorTransformer.swift; sourceTree = "<group>"; };
 		05FC7E6026BAA5850033FC23 /* PropertyList Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PropertyList Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05FC7E6926BAA5860033FC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05FC7E6F26BAA5BF0033FC23 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
@@ -289,9 +289,9 @@
 				05CFC51C26C0275F00D76BA7 /* PropertyListContent.swift */,
 				05CFC4F226C01DAF00D76BA7 /* PropertyListDocument.swift */,
 				05FC7EB026BB62B70033FC23 /* PropertyListNode.swift */,
-				05CFC52626C17FBD00D76BA7 /* PropertyListType.swift */,
-				05CFC52226C17F8400D76BA7 /* PropertyListValue.swift */,
-				05CFC52826C1807500D76BA7 /* PropertyListTextColor.swift */,
+				05CFC52626C17FBD00D76BA7 /* PropertyListTypeTransformer.swift */,
+				05CFC52226C17F8400D76BA7 /* PropertyListValueTransformer.swift */,
+				05CFC52826C1807500D76BA7 /* PropertyListTextColorTransformer.swift */,
 				05CFC51A26C0222100D76BA7 /* PropertyListViewController.swift */,
 				05CFC51826C021DC00D76BA7 /* PropertyListWindowController.swift */,
 			);
@@ -431,11 +431,11 @@
 				05CFC51D26C0275F00D76BA7 /* PropertyListContent.swift in Sources */,
 				05CFC4F326C01DAF00D76BA7 /* PropertyListDocument.swift in Sources */,
 				05FC7E7326BAA5BF0033FC23 /* ApplicationDelegate.swift in Sources */,
-				05CFC52326C17F8400D76BA7 /* PropertyListValue.swift in Sources */,
-				05CFC52726C17FBD00D76BA7 /* PropertyListType.swift in Sources */,
+				05CFC52326C17F8400D76BA7 /* PropertyListValueTransformer.swift in Sources */,
+				05CFC52726C17FBD00D76BA7 /* PropertyListTypeTransformer.swift in Sources */,
 				05CFC51926C021DC00D76BA7 /* PropertyListWindowController.swift in Sources */,
 				05FC7EB126BB62B70033FC23 /* PropertyListNode.swift in Sources */,
-				05CFC52926C1807500D76BA7 /* PropertyListTextColor.swift in Sources */,
+				05CFC52926C1807500D76BA7 /* PropertyListTextColorTransformer.swift in Sources */,
 				05CFC51B26C0222100D76BA7 /* PropertyListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

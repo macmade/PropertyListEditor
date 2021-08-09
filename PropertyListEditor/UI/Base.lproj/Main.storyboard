@@ -806,14 +806,14 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="Bsu-Lb-VVC" name="toolTip" keyPath="objectValue" id="J34-Vo-rr8">
+                                                                        <binding destination="Bsu-Lb-VVC" name="toolTip" keyPath="objectValue" id="Gel-8M-ZP9">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">PropertyListType</string>
+                                                                                <string key="NSValueTransformerName">PropertyListTypeTransformer</string>
                                                                             </dictionary>
                                                                         </binding>
-                                                                        <binding destination="Bsu-Lb-VVC" name="value" keyPath="objectValue" id="Dbi-gW-4z7">
+                                                                        <binding destination="Bsu-Lb-VVC" name="value" keyPath="objectValue" id="E1h-78-2gN">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">PropertyListType</string>
+                                                                                <string key="NSValueTransformerName">PropertyListTypeTransformer</string>
                                                                             </dictionary>
                                                                         </binding>
                                                                     </connections>
@@ -855,19 +855,19 @@
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="mJF-cf-ix1" name="textColor" keyPath="objectValue" id="bWu-aH-GiB">
+                                                                        <binding destination="mJF-cf-ix1" name="textColor" keyPath="objectValue" id="5Gq-sd-VP4">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">PropertyListTextColor</string>
+                                                                                <string key="NSValueTransformerName">PropertyListTextColorTransformer</string>
                                                                             </dictionary>
                                                                         </binding>
-                                                                        <binding destination="mJF-cf-ix1" name="toolTip" keyPath="objectValue" id="xOV-3R-wRM">
+                                                                        <binding destination="mJF-cf-ix1" name="toolTip" keyPath="objectValue" id="I4U-QP-7Pr">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">PropertyListValue</string>
+                                                                                <string key="NSValueTransformerName">PropertyListValueTransformer</string>
                                                                             </dictionary>
                                                                         </binding>
-                                                                        <binding destination="mJF-cf-ix1" name="value" keyPath="objectValue" id="6DG-FG-Bz3">
+                                                                        <binding destination="mJF-cf-ix1" name="value" keyPath="objectValue" id="eiM-HI-SrE">
                                                                             <dictionary key="options">
-                                                                                <string key="NSValueTransformerName">PropertyListValue</string>
+                                                                                <string key="NSValueTransformerName">PropertyListValueTransformer</string>
                                                                             </dictionary>
                                                                         </binding>
                                                                     </connections>

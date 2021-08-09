@@ -22,14 +22,14 @@
  * THE SOFTWARE.
  ******************************************************************************/
 
-import Foundation
+import Cocoa
 
-@objc( PropertyListType )
-public class PropertyListType: ValueTransformer
+@objc( PropertyListTextColorTransformer )
+public class PropertyListTextColorTransformer: ValueTransformer
 {
     public override class func transformedValueClass() -> AnyClass
     {
-        NSString.self
+        NSColor.self
     }
     
     public override class func allowsReverseTransformation() -> Bool
@@ -41,54 +41,9 @@ public class PropertyListType: ValueTransformer
     {
         guard let node = value as? PropertyListNode else
         {
-            return "--"
+            return NSColor.labelColor
         }
         
-        if let _ = node.value as? String
-        {
-            return "String"
-        }
-        else if let _ = node.value as? Bool
-        {
-            return "Boolean"
-        }
-        else if let _ = node.value as? NSNumber
-        {
-            return "Number"
-        }
-        else if let _ = node.value as? Data
-        {
-            return "Data"
-        }
-        else if let _ = node.value as? Date
-        {
-            return "Date"
-        }
-        else if let _ = node.value as? URL
-        {
-            return "URL"
-        }
-        else if let _ = node.value as? UUID
-        {
-            return "UUID"
-        }
-        else if let _ = node.value as? NSArray
-        {
-            return "Array"
-        }
-        else if let _ = node.value as? NSOrderedSet
-        {
-            return "Ordered Set"
-        }
-        else if let _ = node.value as? NSSet
-        {
-            return "Set"
-        }
-        else if let _ = node.value as? NSDictionary
-        {
-            return "Dictionary"
-        }
-        
-        return "--"
+        return node.children.count > 0 ? NSColor.secondaryLabelColor : NSColor.labelColor
     }
 }
